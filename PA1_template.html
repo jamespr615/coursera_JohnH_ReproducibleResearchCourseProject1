@@ -226,8 +226,8 @@ text(Max5MinuteInterval+1, tm,
 <ol style="list-style-type: decimal">
 <li>Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)</li>
 </ol>
-<pre class="r"><code>print( sprintf('The total number of NA values is: %01f', sum(is.na(df$steps)) ) )</code></pre>
-<pre><code>## [1] &quot;The total number of NA values is: 2304.000000&quot;</code></pre>
+<pre class="r"><code>print( sprintf('The total number of NA values is: %0.1f', sum(is.na(df$steps)) ) )</code></pre>
+<pre><code>## [1] &quot;The total number of NA values is: 2304.0&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Devise a strategy for filling in all of the missing values in the dataset.</li>
 </ol>
@@ -322,8 +322,9 @@ cat(fsl2s)  #writeLines(fsl2s)</code></pre>
 </ol>
 <pre class="r"><code>sWeekday&lt;-'weekday'
 sWeekend&lt;-'weekend'
-require(timeDate)
-dfImputed$wd_or_we &lt;- ifelse( isWeekday(as.Date(dfImputed$date)), 
+require(timeDate)</code></pre>
+<pre><code>## Loading required package: timeDate</code></pre>
+<pre class="r"><code>dfImputed$wd_or_we &lt;- ifelse( isWeekday(as.Date(dfImputed$date)), 
                           sWeekday, 
                           sWeekend
                           )
@@ -345,9 +346,9 @@ head(dfImputed)</code></pre>
 dfImputed$TimeSeriesSteps&lt;-ts(dfImputed$steps)
 dft$steps&lt;-ts(dft$steps)
 
-require('lattice')
-
-xyplot(steps ~ interval | wd_or_we,
+require('lattice')</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre class="r"><code>xyplot(steps ~ interval | wd_or_we,
        data = dft,
        xlab='Interval',
        ylab='Number of Steps',

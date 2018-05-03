@@ -95,7 +95,7 @@ Note that there are a number of days/intervals where there are missing values (c
 1. Calculate and report the total number of missing values in the dataset 
     (i.e. the total number of rows with NAs)
 ```{r echo=T}
-print( sprintf('The total number of NA values is: %01f', sum(is.na(df$steps)) ) )
+print( sprintf('The total number of NA values is: %0.1f', sum(is.na(df$steps)) ) )
 ```
 
 2. Devise a strategy for filling in all of the missing values in the dataset. 
