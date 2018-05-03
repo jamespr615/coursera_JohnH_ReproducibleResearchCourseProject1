@@ -3,6 +3,7 @@ title: "Reproducible Research Project 1"
 author: "Mr. Jim"
 date: "May 2, 2018"
 output: html_document
+keep_md: true
 ---
 
 ```{r setup, include=FALSE}
